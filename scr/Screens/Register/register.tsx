@@ -91,14 +91,12 @@ const Register = ({navigation}: {navigation: any}) => {
         ...prev,
         emailError: 'Please enter a valid email',
       }));
-    }
-    //  else if (!phone) {
-    //   setErrorMessages((prev: any) => ({
-    //     ...prev,
-    //     phoneError: 'Please enter your phone number',
-    //   }));
-    // }
-    else if (!password) {
+    } else if (!phone.trim()) {
+      setErrorMessages((prev: any) => ({
+        ...prev,
+        phoneError: 'Please enter your phone number',
+      }));
+    } else if (!password) {
       setErrorMessages((prev: any) => ({
         ...prev,
         passwordError: 'Please enter your password',
@@ -112,18 +110,12 @@ const Register = ({navigation}: {navigation: any}) => {
       apiCall();
     }
   };
-  const generateRandomPhone = () => {
-    const randomNumber = Math.floor(1000000000 + Math.random() * 9000000000); // 10 digit
-    return `${randomNumber}`;
-  };
   const apiCall = () => {
-    const phoneNumber = phone ? phone : generateRandomPhone();
-
     const userData = {
       first_name: firstName,
       last_name: lastName,
       email,
-      phone: phoneNumber,
+      phone: phone.trim(),
       password,
     };
     console.log('@USER register', userData);
@@ -225,9 +217,9 @@ const Register = ({navigation}: {navigation: any}) => {
                   placeholderTextColor="#9E9E9E"
                 />
               </View>
-              {/* {errorMessage.phoneError && (
+              {errorMessage.phoneError && (
                 <Text style={styles.errorText}>{errorMessage.phoneError}</Text>
-              )} */}
+              )}
               <Text style={styles.label}>Password</Text>
               <View style={styles.passwordContainer}>
                 <TextInput
