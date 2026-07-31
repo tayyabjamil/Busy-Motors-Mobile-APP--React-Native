@@ -295,6 +295,9 @@ const PlanRoute = ({ onSelectSubscription, activeSubscriptions, isPurchasing, pr
                 <Text style={styles.planDuration}>
                   {isWeekly ? '7-day access' : '30-day access'}
                 </Text>
+                <View style={styles.freeTrialBadge}>
+                  <Text style={styles.freeTrialText}>7 Days Free Trial</Text>
+                </View>
                 <View style={styles.linkRow}>
                   <Text style={styles.linkText} onPress={() => Linking.openURL(`${Config.API_BASE_URL}/terms`)}>
                     Terms
@@ -479,6 +482,19 @@ const styles = StyleSheet.create({
     fontFamily: Fonts.regular,
     color: Colors.textSecondary,
     marginBottom: 6,
+  },
+  freeTrialBadge: {
+    alignSelf: 'flex-start',
+    backgroundColor: '#E8F5E9',
+    borderRadius: 4,
+    paddingHorizontal: 6,
+    paddingVertical: 2,
+    marginBottom: 6,
+  },
+  freeTrialText: {
+    fontSize: wp(3),
+    fontFamily: Fonts.semiBold,
+    color: '#2E7D32',
   },
   linkRow: {
     flexDirection: 'row',
