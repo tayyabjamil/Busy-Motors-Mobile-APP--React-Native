@@ -96,6 +96,11 @@ const Register = ({navigation}: {navigation: any}) => {
         ...prev,
         phoneError: 'Please enter your phone number',
       }));
+    } else if (phone.replace(/\s/g, '').length < 10) {
+      setErrorMessages((prev: any) => ({
+        ...prev,
+        phoneError: 'Please enter a valid phone number',
+      }));
     } else if (!password) {
       setErrorMessages((prev: any) => ({
         ...prev,
@@ -200,7 +205,7 @@ const Register = ({navigation}: {navigation: any}) => {
               {errorMessage.emailError && (
                 <Text style={styles.errorText}>{errorMessage.emailError}</Text>
               )}
-              <Text style={styles.label}>Phone Number</Text>
+              <Text style={styles.label}>Phone Number <Text style={{color: 'red'}}>*</Text></Text>
               <View style={styles.phoneContainer}>
                 <TextInput
                   style={[styles.phoneInput, {borderLeftWidth: 0}]}

@@ -29,13 +29,16 @@ const wp = v => (SCREEN_W * v) / 100;
 const hp = v => (SCREEN_H * v) / 100;
 
 const SCRAP_FEATURES = [
-  'Access curated scrap car listings',
+  '7 Days Free Trial',
+  'Access cukljlrated scrap car listings',
   'Real-time vehicle updates',
   'Direct seller contact',
   'Unlimited enquiries',
 ];
 
 const SALVAGE_FEATURES = [
+  '7 Days Free Trial',
+  'Unlimited enquiries',
   'Browse salvage car listings',
   'Connect with offload sellers',
   'Expand your inventory',
