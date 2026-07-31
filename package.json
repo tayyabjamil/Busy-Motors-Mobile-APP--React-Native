@@ -12,7 +12,7 @@
     "start:staging": "ENVFILE=.env.staging react-native start",
     "start:prod": "ENVFILE=.env.production react-native start",
     "lint": "eslint .",
-    "start": "react-native start",
+    "start": "node init && react-native start",
     "test": "jest"
   },
   "dependencies": {
